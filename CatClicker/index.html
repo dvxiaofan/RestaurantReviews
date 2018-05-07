@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Cat Clicker</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
-	<div class="main">
-		<div class="cat-img" id="cat-img01">
-			<img src="images/cat01.jpg" alt="cat image">
-		</div>
-		<div class="clickCount" id="clickCount01">0</div>
+	<div class="cat-list">
+		<ul>
+			<li class="cat-item">
+				<button class="click-btn" id="btn-01">cat01</button>
+			</li>
+			<li class="cat-item">
+				<button class="click-btn" id="btn-02">cat02</button>
+			</li>
+			<li class="cat-item">
+				<button class="click-btn" id="btn-03">cat03</button>
+			</li>
+			<li class="cat-item">
+				<button class="click-btn" id="btn-04">cat04</button>
+			</li>
+			<li class="cat-item">
+				<button class="click-btn" id="btn-05">cat05</button>
+			</li>
+		</ul>
 	</div>
-	
-	<div class="main">
-		<div class="cat-img" id="cat-img02">
-			<img src="images/cat02.jpg" alt="cat image">
-		</div>
-		<div class="clickCount" id="clickcount02">0</div>
-	</div>
+	<div class="cat-view"></div>
 
 
 
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-	<script src="main.js"></script>
+	<script src="js/main.js"></script>
 </body>
+
 </html>
