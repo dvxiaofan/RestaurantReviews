@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	/* float: left; */
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+
+	/* margin-right: 50px; */
+}
+
+.cat-img {
+	margin-top: 50px;
+}
+
+img {
+	width: 100%;
+	/* height: 100%; */
+}
+
+.clickCount {
+	text-align: center;
+	background-color: #999;
+	color: #fff;
+	width: 100px;
+	line-height: 1.5em;
+}
