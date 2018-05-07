@@ -1,7 +1,7 @@
 $(function () {
-	// 清除本地缓存
-	localStorage.notes = [];
+	localStorage.clear();
 
+	// model
 	var model = {
 		init: function () {
 			if (!localStorage.notes) {
@@ -19,17 +19,24 @@ $(function () {
 		}
 	};
 
-
+	// octopus
 	var octopus = {
 		addNewNote: function (noteStr) {
+
+			var nowDate = new Date();
+
+			var newNoteDate = `${nowDate.getFullYear()}/${nowDate.getMonth() + 1}/${nowDate.getDate()}/${nowDate.getHours()}/${nowDate.getMinutes()}`;
+
 			model.add({
-				content: noteStr
+				content: noteStr,
+				date: newNoteDate
 			});
 			view.render();
 		},
 
 		getNotes: function () {
-			return model.getAllNotes();
+			// 改变显示顺序
+			return model.getAllNotes().reverse();
 		},
 
 		init: function () {
@@ -38,12 +45,13 @@ $(function () {
 		}
 	};
 
-
+	// view
 	var view = {
 		init: function () {
 			this.noteList = $('#notes');
 			var newNoteForm = $('#new-note-form');
 			var newNoteContent = $('#new-note-content');
+
 			newNoteForm.submit(function (e) {
 				octopus.addNewNote(newNoteContent.val());
 				newNoteContent.val('');
@@ -54,9 +62,7 @@ $(function () {
 		render: function () {
 			var htmlStr = '';
 			octopus.getNotes().forEach(function (note) {
-				htmlStr += '<li class="note">' +
-					note.content +
-					'</li>';
+				htmlStr += '<li class="note">' + note.content + '----' + note.date + '</li>';
 			});
 			this.noteList.html(htmlStr);
 		}
