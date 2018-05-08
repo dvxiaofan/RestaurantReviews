@@ -1,3 +1,37 @@
+
+ul {
+	float: left;
+}
+
 li {
-	list-style-type: none;
+	line-height: 2em;
+}
+li:hover {
+	cursor: pointer;
+}
+
+#cat {
+	text-align: center;
+}
+
+#clear {	
+	clear: both;
+}
+
+img {
+	width: 500px;
+	height: 300px;
+}
+
+#admin {
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+#info-img {
+	width: 300px;
+}
+
+#cancel {
+	margin-top: 10px;
 }

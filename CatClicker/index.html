@@ -13,15 +13,31 @@
 <body>
 
 	<ul id="cat-list"></ul>
+
+
 	<div id="cat">
 		<h2 id="cat-name"></h2>
 		<div id="cat-count"></div>
 		<img src="" alt="cat img" id="cat-img">
 	</div>
 
+	<div id="clear"></div>
 
 
-	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<button id="admin">ChangeInfo</button>
+	<div id="admin-view" style="display: none">
+		<div id="info-input">
+			<span>catName:</span>
+			<input type="text" id="info-name">
+			<span>catClickCount:</span>
+			<input type="text" id="info-count">
+			<span>catImgUrl:</span>
+			<input type="text" id="info-img">
+		</div>
+		<button id="cancel">Cancel</button>
+		<button id="save">Save</button>
+	</div>
+
 	<script src="js/main.js"></script>
 </body>
 

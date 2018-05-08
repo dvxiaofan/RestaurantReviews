@@ -47,6 +47,7 @@ var octopus = {
 		// 告诉视图开始渲染
 		catListView.init();
 		catView.init();
+		adminView.init();
 	},
 
 	getCurrentCat: function () {
@@ -66,7 +67,10 @@ var octopus = {
 	incrementCounter: function () {
 		model.currentCat.clickCount++;
 		catView.render();
-	}
+	},
+
+	// 显示管理视图
+
 };
 
 
@@ -139,6 +143,59 @@ var catListView = {
 			// 最后， 将元素添加到列表中
 			this.catListElem.appendChild(elem);
 		}
+	}
+};
+
+var adminView = {
+	init: function () {
+		var adView = document.getElementById('admin-view');
+
+		this.showAdView = false;
+
+		this.adBtn = document.getElementById('admin');
+		this.cancelBtn = document.getElementById('cancel');
+		this.saveBtn = document.getElementById('save');
+
+		this.adBtn.addEventListener('click', function () {
+			adView.style.display = '';
+		});
+
+		this.cancelBtn.addEventListener('click', function () {
+			adView.style.display = 'none';
+		});
+
+		this.saveBtn.addEventListener('click', function () {
+			var infoName = document.getElementById('info-name').value;
+			var infoImg = document.getElementById('info-img').value;
+			var infoCount = document.getElementById('info-count').value;
+
+			var cat = {
+				clickCount: infoCount,
+				name: infoName,
+				imgSrc: infoImg,
+				imgAttribution: 'hello'
+			}
+			
+			octopus.setCurrentCat(cat);
+			catView.render();
+			
+			adView.style.display = 'none';
+			
+		});
+
+		this.render();
+
+	},
+
+	render: function () {
+		/* var adView = document.getElementById('admin-view');
+		if (this.showAdView) {
+			adView.style.display = '';
+		} else {
+			adView.style.display = 'none';
+		}
+		console.log(this.showAdView); */
+		
 	}
 };
 
