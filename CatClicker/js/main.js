@@ -58,7 +58,7 @@ var octopus = {
 	},
 
 	// 将当前选择的猫设置为传入对象
-	serCurrentCat: function (cat) {
+	setCurrentCat: function (cat) {
 		model.currentCat = cat;
 	},
 
@@ -75,19 +75,13 @@ var octopus = {
 var catView = {
 
 	init: function () {
-		/* this.catElem = $('#cat');
-		this.catNameElem = $('#cat-name');
-		this.catImgElem = $('#cat-img');
-		this.catCountElme = $('#cat-count'); */
+
 		this.catElem = document.getElementById('cat');
 		this.catNameElem = document.getElementById('cat-name');
 		this.catImgElem = document.getElementById('cat-img');
 		this.catCountElem = document.getElementById('cat-count');
 
 		// 点击后，增加当前猫的计数器
-		/* this.catImgElem.click(function () {
-			octopus.incrementCounter();
-		}); */
 		this.catImgElem.addEventListener('click', function () {
 			octopus.incrementCounter();
 		});
@@ -137,9 +131,9 @@ var catListView = {
 			// （这使用我们循环中的闭包将cat变量的值连接到click事件函数）
 			elem.addEventListener('click', (function (catCopy) {
 				return function () {
-					octopus.serCurrentCat(catCopy);
+					octopus.setCurrentCat(catCopy);
 					catView.render();
-				};
+				}
 			})(cat));
 
 			// 最后， 将元素添加到列表中
