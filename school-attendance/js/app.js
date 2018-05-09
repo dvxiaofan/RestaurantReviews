@@ -45,7 +45,7 @@
 
             return `<thead>
                         <tr>
-                            <th class="name-col">Student Name</th?
+                            <th class="name-col">Student Name</th>
                             ${lessonNumbers}
                             <th class="missed-col">Days Missed-col</th>
                         </tr>
@@ -118,5 +118,4 @@
     })();
 
     controller.init();
-
 }());
