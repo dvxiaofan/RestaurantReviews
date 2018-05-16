@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 var promiseCount = 0;
 
 function testPromise() {
@@ -24,7 +24,7 @@ function testPromise() {
     );
 
     // Promise 不论成功或失败都会调用 then
-    // catch() 只有当 promise 失败时才会调用
+    // catch() 只有 promise 失败时才会调用
     p1.then(
         // 记录填充值
         function(val) {
